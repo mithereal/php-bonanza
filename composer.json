@@ -5,13 +5,16 @@
     "keywords": ["bonanza", "boneapitit",  "library",  "class"],
     "homepage": "https://github.com/mithereal/php-bonanza",
     "license": "MIT",
+    
     "authors": [
         {
             "name": "Jason Clark",
+             "email": "mithereal@gmail.com",
             "homepage": "https://github.com/mithereal",
-            "role": "Developer / Freelancer",
+            "role": "Developer",
         }
     ],
+    
     "require": {
         "php": ">=5.3.0",
     },
