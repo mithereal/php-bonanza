@@ -38,11 +38,145 @@ class Boneapitit {
         $api_call_and_args = $this->buildrequest('getOrders', $args);
         return $this->secureapicall($api_call_and_args);
     }
+    
+    public function getCategories($categoryParent) {
+         $args = array("categoryParent" => $categoryParent);
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getCategories', $args);
+        return $this->standardapicall($api_call_and_args);
+    }
+    public function getCategoryTraits($categoryParent) {
+         $args = array("categoryParent" => $categoryParent);
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getCategoryTraits', $args);
+        return $this->standardapicall($api_call_and_args);
+    }
+    public function getCheckoutLink($itemIds=null,$affiliateToken=null) {
+         $args = array("itemIds" => $itemIds);
+         if($affiliateToken != null){
+			 $args["affiliateToken"] = $affiliateToken;
+		 }
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getCheckoutLink', $args);
+        return $this->standardapicall($api_call_and_args);
+    }
+    public function getItem($itemId) {
+         $args = array("itemId" => $itemId);
+         
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getSingleItem', $args);
+        return $this->standardapicall($api_call_and_args);
+    }
+    public function getUnlistedItem($itemId) {
+         $args = array("itemId" => $itemId);
+         
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getSingleItem', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    
+    
+    public function updateBooth() {
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('updateBooth', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function getBooth($userid) {
+         $args = array("userId" => $userid);
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getBooth', $args);
+        return $this->standardapicall($api_call_and_args);
+    }
+    
+    public function getBoothItems($userid) {
+         $args = array("userId" => $userid);
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getBoothItems', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function getBoothStats($userid) {
+         $args = array("userId" => $userid);
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getBoothStats', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function getMessagesList($args = []) {
+         
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getMessagesList', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function updateMessage($messageId = null, $args = []) {
+         $args["messageId"] = array("messageId" => $messageId);
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('updateMessage', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function createMessage($body = null, $args = []) {
+         $args["body"] = $body;
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('createMessage', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function setNotificationPreferences($args = []) {
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('setNotificationPreferences', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function getNotificationPreferences($args = []) {
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getNotificationPreferences', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function getMessages($messageId) {
+         $args = array("messageId" => $messageId);
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getMessages', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
 
     public function getProfile($userid) {
         $args = array("userId" => $userid);
         $api_call_and_args = $this->buildrequest('getUserProfile', $args);
         return $this->standardapicall($api_call_and_args);
+    }
+    public function getUser() {
+        
+        $api_call_and_args = $this->buildrequest('getUser');
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function getTokenStatus() {
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('getTokenStatus', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function completeSale($args = []) {
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('completeSale', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function endFixedPriceItem($id ) {
+        $args["itemID"] = $id;
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('addFixedPriceItem', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function reviseFixedPriceItem($id, $args = [] ) {
+        $args["itemID"] = $id;
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('addFixedPriceItem', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function reviseMultipleFixedPriceItems($id = [], $args = [] ) {
+        $args["itemID"] = $id;
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('addFixedPriceItem', $args);
+        return $this->secureapicall($api_call_and_args);
+    }
+    public function addFixedPriceItem($args = []) {
+        $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
+        $api_call_and_args = $this->buildrequest('addFixedPriceItem', $args);
+        return $this->secureapicall($api_call_and_args);
     }
 
     public function standardapicall($api_call_and_args = "") {
@@ -67,7 +201,7 @@ class Boneapitit {
         return $response;
     }
 
-    public function buildrequest($api_call_name, $assoc_array) {
+    public function buildrequest($api_call_name='getUser', $assoc_array = []) {
         $request_name = $api_call_name . "Request";
         $json = json_encode($assoc_array, JSON_HEX_AMP);
         $request = $request_name . "=" . $json;
