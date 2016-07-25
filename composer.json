@@ -11,7 +11,13 @@
             "name": "Jason Clark",
              "email": "mithereal@gmail.com",
             "homepage": "https://github.com/mithereal",
-            "role": "Developer",
+            "role": "Lead Developer"
+        },
+        
+        {
+            "name": "bonanza Team",
+            "homepage": "https://github.com/mithereal/php-bonanza/network/members",
+            "role": "Contributors"
         }
     ],
     
