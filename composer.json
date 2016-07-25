@@ -1,7 +1,7 @@
 {
     "name": "mithereal/bonanza",
     "type": "library",
-    "description": "A simple PHP wrapper for Bonanza's API ",
+    "description": "A simple PHP wrapper for Bonanza.com's API ",
     "keywords": ["bonanza", "boneapitit",  "library",  "class"],
     "homepage": "https://github.com/mithereal/php-bonanza",
     "license": "MIT",
