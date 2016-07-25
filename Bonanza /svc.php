@@ -1,7 +1,7 @@
 <?php
 namespace Bonanza;
 
-class Boneapitit {
+class svc{
 
     protected $dev_name = null;
     protected $cert_name = null;
