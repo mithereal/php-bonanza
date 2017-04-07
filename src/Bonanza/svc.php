@@ -32,7 +32,7 @@ class svc{
         return $resp;
     }
 
-    public function getOrders() {
+    public function getOrders($args = []) {
         
         $args["requesterCredentials"] = array('bonanzleAuthToken' => $this->token);
         $api_call_and_args = $this->buildrequest('getOrders', $args);
