@@ -1,5 +1,5 @@
 {
-    "name": "mithereal/bonanza",
+    "name": "ecomlogic/bonanza-sdk",
     "type": "library",
     "description": "A simple PHP wrapper for Bonanza.com's API ",
     "keywords": ["bonanza", "boneapitit",  "library",  "class"],
